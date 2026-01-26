@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
     { name: 'Nursing Coaching Comparison', path: '/best-nursing-coaching-in-india' },
     { name: 'Courses', path: '/nursing-exam-courses' },
     { name: 'PYQs', path: '/nursing-pyq' },
-    { name: 'Subject Wise Tests', path: '/nursing-test-series' }, // Renamed
+    { name: 'Subject Wise Tests', path: '/nursing-test-series' },
     { name: 'Blog', path: '/blog' },
   ];
 
@@ -28,7 +28,7 @@ export const Header: React.FC = () => {
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-xl text-brand-dark leading-tight">Best Nursing</span>
-                <span className="font-semibold text-sm text-gray-600 leading-tight">Coaching.com</span>
+                <span className="font-semibold text-sm text-gray-600 leading-tight">Coaching</span>
               </div>
             </Link>
           </div>
