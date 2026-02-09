@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
-import { ArrowRight, CheckCircle, BookOpen, Users, Trophy, ExternalLink, Star } from 'lucide-react';
-import { EXAMS, EXTERNAL_LINKS, REVIEWS } from '../data/mockData';
+import { ArrowRight, CheckCircle, BookOpen, Trophy, ExternalLink, Star, Zap, Target, Award, XCircle, AlertCircle } from 'lucide-react';
+import { EXAMS, EXTERNAL_LINKS, REVIEWS, COMPARISON_DATA } from '../data/mockData';
 
 export const Home: React.FC = () => {
   return (
@@ -12,26 +12,29 @@ export const Home: React.FC = () => {
         description="Find the best nursing coaching for AIIMS NORCET, RRB Nursing Superintendent, and State exams. Compare courses, download PYQs, and access free test series."
       />
       
-      {/* Hero Section */}
+      {/* Hero Section - Center Aligned */}
       <section className="bg-brand-dark text-white relative overflow-hidden">
-        {/* Updated Image: Nurses working in a hospital setting */}
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] opacity-10 bg-cover bg-center"></div>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-              Best <span className="text-brand-yellow">Nursing Coaching</span> in India <br/>
-              <span className="text-2xl md:text-3xl font-medium text-gray-300 block mt-2">Exams, Courses, PYQs & Preparation Platforms</span>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              Best <span className="text-brand-yellow">Nursing Coaching</span> in India
             </h1>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
               Your one-stop destination to crack AIIMS NORCET, RRB Nursing Superintendent, and State Nursing Officer exams. 
-              We evaluate the top coaching institutes and provide honest, data-backed comparisons to help you succeed.
+              We evaluate top platforms to help you choose the right mentor.
             </p>
-            <div className="flex flex-wrap gap-4">
-              <a href={EXTERNAL_LINKS.gold} target="_blank" rel="noopener noreferrer" className="bg-brand-yellow text-brand-dark px-6 py-3 rounded-md font-bold hover:bg-yellow-400 transition-colors flex items-center gap-2">
-                Explore Gold Batch <ArrowRight className="h-5 w-5" />
+            
+            {/* Core Product Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href={EXTERNAL_LINKS.gold} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-brand-yellow text-brand-dark px-8 py-4 rounded-md font-bold hover:bg-yellow-400 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-yellow-500/20">
+                <Award className="h-5 w-5" /> Gold Batch
               </a>
-              <a href={EXTERNAL_LINKS.pyq} target="_blank" rel="noopener noreferrer" className="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-md font-semibold hover:bg-white/20 transition-colors">
-                Download PYQs
+              <a href={EXTERNAL_LINKS.testSeries} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white text-brand-dark px-8 py-4 rounded-md font-bold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                <Target className="h-5 w-5" /> Test Series
+              </a>
+              <a href={EXTERNAL_LINKS.rapid} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-red-600 text-white px-8 py-4 rounded-md font-bold hover:bg-red-700 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-red-600/20">
+                <Zap className="h-5 w-5" /> Rapid Revision
               </a>
             </div>
           </div>
@@ -40,86 +43,132 @@ export const Home: React.FC = () => {
 
       {/* Intro / Authority Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Nursing Exams Are Highly Competitive</h2>
-          <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-            With over 10 lakh aspirants appearing for central and state nursing exams annually, the competition is fierce. 
-            Structured preparation is no longer optional—it's a necessity. Whether you choose online platforms, offline institutes, 
-            or hybrid coaching, the right guidance defines your rank.
-          </p>
-          <div className="bg-yellow-50 border-l-4 border-brand-yellow p-6 text-left rounded-r-lg">
-            <p className="font-medium text-gray-800">
-              <span className="font-bold text-brand-dark">Our Recommendation:</span> Based on our extensive evaluation of content depth, 
-              faculty expertise, and student results, <a href={EXTERNAL_LINKS.gold} target="_blank" rel="noopener noreferrer" className="font-bold text-brand-dark underline decoration-brand-yellow decoration-2 underline-offset-2">NPrep</a> stands out as one of the 
-              most comprehensive and exam-focused nursing preparation platforms in India today.
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Nursing Exams Require Coaching</h2>
+            <p className="text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+              The competition for government nursing jobs has evolved. With AIIMS NORCET introducing <strong>clinical scenario-based questions</strong> and RRB focusing on non-technical subjects, self-study from standard textbooks is often not enough. Structured coaching provides the <strong>exam-oriented filter</strong> you need to navigate the vast syllabus efficiently.
             </p>
           </div>
+
+          {/* Credibility & Logic Block */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
+            
+            {/* How We Evaluate */}
+            <div className="bg-gray-50 p-8 rounded-xl border border-gray-200">
+              <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                <CheckCircle className="h-6 w-6 text-brand-yellow" /> Our Comparison Logic
+              </h3>
+              <p className="text-gray-600 mb-4 text-sm">
+                We rank coaching platforms based on three non-negotiable metrics:
+              </p>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3">
+                  <div className="bg-white p-1 rounded border border-gray-200 shadow-sm">
+                    <span className="font-bold text-xs text-brand-dark">01</span>
+                  </div>
+                  <span className="text-sm text-gray-700"><strong>Clinical Depth:</strong> Does the content cover practical scenarios required for AIIMS Mains?</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="bg-white p-1 rounded border border-gray-200 shadow-sm">
+                    <span className="font-bold text-xs text-brand-dark">02</span>
+                  </div>
+                  <span className="text-sm text-gray-700"><strong>PYQ Integration:</strong> Are previous year questions taught alongside theory or dumped as PDFs?</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <div className="bg-white p-1 rounded border border-gray-200 shadow-sm">
+                    <span className="font-bold text-xs text-brand-dark">03</span>
+                  </div>
+                  <span className="text-sm text-gray-700"><strong>Student Outcomes:</strong> Verified selections in recent NORCET and RRB cycles.</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* NPrep Achievements */}
+            <div className="bg-brand-dark text-white p-8 rounded-xl border border-gray-700 relative overflow-hidden">
+              <div className="absolute top-0 right-0 -mt-4 -mr-4 bg-brand-yellow/10 w-32 h-32 rounded-full blur-2xl"></div>
+              <h3 className="text-xl font-bold text-brand-yellow mb-6 flex items-center gap-2">
+                <Trophy className="h-6 w-6" /> NPrep Achievements
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex items-start gap-3">
+                  <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-200 text-sm"><strong>Top Rankers:</strong> Produced consistent Top 100 rankers in NORCET 6 & 7.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-200 text-sm"><strong>Selection Ratio:</strong> Highest selection-to-student ratio in Central Govt exams.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-200 text-sm"><strong>Content Innovation:</strong> First platform to introduce "Clinical Vignette" training for Mains.</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
+                  <span className="text-gray-200 text-sm"><strong>QBank Authority:</strong> 30,000+ verified questions with video rationales.</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
         </div>
       </section>
 
-      {/* Exam Categories */}
-      <section className="py-16 bg-gray-50">
+      {/* Comparison Table Section */}
+      <section className="py-16 bg-gray-50 border-y border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">Explore Nursing Exams</h2>
-            <p className="mt-4 text-gray-600">Complete details, syllabus, and patterns for all major exams</p>
+            <h2 className="text-3xl font-bold text-gray-900">Coaching Comparison Matrix</h2>
+            <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
+              We compared the top nursing coaching platforms on parameters that matter for your selection.
+            </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {EXAMS.map((exam) => (
-              <Link key={exam.id} to={`/exams/${exam.slug}`} className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow border border-gray-100 group">
-                <div className="bg-blue-50 w-12 h-12 rounded-full flex items-center justify-center mb-4 group-hover:bg-brand-yellow transition-colors">
-                  <BookOpen className="h-6 w-6 text-blue-600 group-hover:text-brand-dark" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{exam.name}</h3>
-                <p className="text-sm text-gray-500 mb-4">{exam.category}</p>
-                <span className="text-brand-dark font-medium text-sm flex items-center gap-1 group-hover:text-blue-600">
-                  View Details <ArrowRight className="h-4 w-4" />
-                </span>
-              </Link>
-            ))}
-          </div>
-          
-          <div className="text-center mt-10">
-            <Link to="/exams" className="text-blue-600 font-semibold hover:text-blue-800">View All Exams &rarr;</Link>
-          </div>
-        </div>
-      </section>
 
-      {/* Features / USP Grid */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6">
-              <div className="mx-auto bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Trophy className="h-8 w-8 text-green-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Unbiased Comparisons</h3>
-              <p className="text-gray-600">We evaluate coaching platforms on 20+ parameters including faculty, PYQs, and test series.</p>
-            </div>
-            <div className="text-center p-6">
-              <div className="mx-auto bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Users className="h-8 w-8 text-purple-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Student Centric</h3>
-              <p className="text-gray-600">Our reviews are based on real student feedback and actual platform usage.</p>
-            </div>
-            <div className="text-center p-6">
-              <div className="mx-auto bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <CheckCircle className="h-8 w-8 text-orange-600" />
-              </div>
-              <h3 className="text-xl font-bold mb-2">Exam Focused</h3>
-              <p className="text-gray-600">We prioritize platforms that focus on exam-relevant content rather than generic theory.</p>
-            </div>
+          <div className="overflow-x-auto shadow-lg rounded-lg border border-gray-200 bg-white">
+            <table className="w-full text-left border-collapse min-w-[900px]">
+              <thead>
+                <tr className="bg-gray-100 text-sm uppercase tracking-wider">
+                  <th className="p-6 font-bold text-gray-600 w-1/5 sticky left-0 bg-gray-100 z-10 border-r border-gray-200">Feature</th>
+                  <th className="p-6 text-center w-1/5 bg-yellow-50 border-x-2 border-brand-yellow relative pt-10">
+                    <div className="absolute top-2 left-1/2 transform -translate-x-1/2 bg-brand-yellow text-brand-dark text-[10px] font-bold px-3 py-1 rounded-full shadow-sm whitespace-nowrap z-20">
+                      RECOMMENDED
+                    </div>
+                    <span className="text-xl font-bold text-brand-dark block mt-2">NPrep</span>
+                  </th>
+                  <th className="p-6 text-center w-1/5 font-semibold text-gray-700 border-r border-gray-100">Nursing Next Live</th>
+                  <th className="p-6 text-center w-1/5 font-semibold text-gray-700 border-r border-gray-100">Nursing Wallah</th>
+                  <th className="p-6 text-center w-1/5 font-semibold text-gray-700">Adda247</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-gray-200 text-sm">
+                {COMPARISON_DATA.map((row, idx) => (
+                  <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
+                    <td className="p-5 font-bold text-gray-800 sticky left-0 bg-inherit border-r border-gray-200 z-10">{row.parameter}</td>
+                    <td className="p-5 text-center bg-yellow-50/30 border-x-2 border-yellow-100 font-bold text-brand-dark">
+                      {row.nprep}
+                    </td>
+                    <td className="p-5 text-center text-gray-600 border-r border-gray-100">{row.nnl}</td>
+                    <td className="p-5 text-center text-gray-600 border-r border-gray-100">{row.nw}</td>
+                    <td className="p-5 text-center text-gray-600">{row.adda}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          
+          <div className="text-center mt-8">
+            <Link to="/best-nursing-coaching-in-india" className="text-blue-600 font-semibold hover:text-blue-800 flex items-center justify-center gap-1">
+              Read Detailed Review <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
 
       {/* Floating Reviews Section */}
-      <section className="py-12 bg-gray-50 overflow-hidden border-y border-gray-200">
+      <section className="py-12 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900">What Students Say About NPrep</h2>
-          <p className="text-gray-600 mt-2">Real feedback from successful nursing officers</p>
+          <h2 className="text-2xl font-bold text-gray-900">Student Feedback</h2>
+          <p className="text-gray-600 mt-2">Unbiased reviews from verified users</p>
         </div>
         
         <div className="relative w-full marquee-container">
@@ -172,25 +221,17 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* SEO Authority Block - Comprehensive Nursing Exams Guide */}
-      <section className="py-16 bg-white">
+      {/* SEO Authority Block - Focused on Exam Strategy */}
+      <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="prose prose-lg max-w-none text-gray-700">
-            <h2 className="text-3xl font-bold text-brand-dark mb-6">The Nursing Profession: A Pillar of Healthcare</h2>
-            <p>
-              Nursing stands as the backbone of the global healthcare infrastructure, dedicated to the holistic care, recovery, and health maintenance of individuals and communities. Beyond administering medication, modern nursing involves complex clinical decision-making, patient advocacy, and specialized care across critical domains like trauma, pediatrics, and oncology. For aspiring professionals in India, the journey begins with rigorous entrance exams and culminates in prestigious recruitment tests that open doors to government service and top-tier medical institutions.
-            </p>
-
-            <h2 className="text-3xl font-bold text-brand-dark mt-12 mb-6">Nursing Exams 2026: The Gateway to Government Service</h2>
-            <p>
-              The 2026 examination cycle represents a massive opportunity for nursing aspirants, with thousands of vacancies anticipated across Central and State government sectors. These exams are the qualifying criteria for securing permanent Nursing Officer positions in premier institutes like AIIMS, PGIMER, and JIPMER, as well as massive recruitment drives by the Indian Railways (RRB) and ESIC. Success in these competitive exams requires a strategic blend of conceptual clarity, clinical knowledge, and consistent practice using resources like <a href={EXTERNAL_LINKS.testSeries} target="_blank" rel="noopener noreferrer" className="text-blue-600 font-semibold hover:underline">NPrep Test Series</a>.
+            <h2 className="text-3xl font-bold text-brand-dark mb-6 text-center">Nursing Exams 2026: The Gateway to Government Service</h2>
+            <p className="text-center mb-12">
+              The 2026 examination cycle represents a massive opportunity for nursing aspirants, with thousands of vacancies anticipated across Central and State government sectors. Success in these competitive exams requires a strategic blend of conceptual clarity, clinical knowledge, and consistent practice.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mt-10 mb-6">Key Nursing Exam Categories (2026)</h3>
-            <p className="mb-6">
-              Nursing exams in India are broadly categorized into Recruitment Exams (for jobs) and Entrance Exams (for higher education). Below is the breakdown of the major exams scheduled for the upcoming academic and financial year.
-            </p>
             
             <div className="overflow-x-auto mb-10">
               <table className="min-w-full bg-white border border-gray-300 shadow-sm rounded-lg overflow-hidden">
@@ -222,20 +263,11 @@ export const Home: React.FC = () => {
                     <td className="py-4 px-6">Community Health Officer roles at Health & Wellness Centers.</td>
                     <td className="py-4 px-6">Community Health Nursing, Primary Health Care, Public Health.</td>
                   </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-bold text-brand-dark">B.Sc Nursing Entrance</td>
-                    <td className="py-4 px-6">Admission to top Nursing Colleges (AIIMS, JIPMER, etc.).</td>
-                    <td className="py-4 px-6">Physics, Chemistry, Biology (Botany & Zoology), Aptitude.</td>
-                  </tr>
                 </tbody>
               </table>
             </div>
 
             <h3 className="text-2xl font-bold text-gray-900 mt-12 mb-6">Eligibility Blueprint for 2026 Exams</h3>
-            <p className="mb-6">
-              Eligibility criteria vary significantly between central and state level exams. While B.Sc Nursing is the standard gold qualification, GNM candidates often require additional experience for central institutes. Refer to the table below for a quick eligibility check.
-            </p>
-
             <div className="overflow-x-auto mb-10">
               <table className="min-w-full bg-white border border-gray-300 shadow-sm rounded-lg overflow-hidden">
                 <thead className="bg-brand-dark text-white">
@@ -275,123 +307,10 @@ export const Home: React.FC = () => {
                       </ul>
                     </td>
                   </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-bold text-brand-dark align-top">State NHM CHO</td>
-                    <td className="py-4 px-6">
-                      <ul className="list-disc pl-4 space-y-1 text-gray-600">
-                        <li>B.Sc Nursing / GNM with Integrated CCH Course preferred.</li>
-                        <li>State Nursing Council registration is often mandatory.</li>
-                      </ul>
-                    </td>
-                  </tr>
                 </tbody>
               </table>
             </div>
-
-            <h2 className="text-3xl font-bold text-brand-dark mt-16 mb-8 border-b-4 border-brand-yellow inline-block pb-2">Comprehensive List of Nursing Exams in India (2026)</h2>
-            <p className="mb-8 text-lg">
-              Below is the detailed breakdown of every major nursing exam conducted in India. Aspiring nurses should keep a close watch on official notifications for these opportunities.
-            </p>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              
-              {/* Central Govt Exams */}
-              <div className="col-span-1 md:col-span-2">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 bg-gray-100 p-3 rounded-lg">Central Government Recruitment</h3>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2 flex items-center gap-2">
-                  <ExternalLink className="h-5 w-5 text-brand-yellow" /> AIIMS NORCET
-                </h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  The <strong>Nursing Officer Recruitment Common Eligibility Test</strong> is the most prestigious exam, recruiting for all AIIMS institutes (New Delhi, Rishikesh, Jodhpur, etc.) and NITRD. It is known for its clinical-scenario based questions.
-                </p>
-                <a href={EXTERNAL_LINKS.gold} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm font-bold hover:underline">Prepare for NORCET &rarr;</a>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2 flex items-center gap-2">
-                  <ExternalLink className="h-5 w-5 text-brand-yellow" /> RRB Nursing Superintendent
-                </h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  Conducted by the <strong>Railway Recruitment Board</strong>, this exam fills vacancies in the vast Indian Railways healthcare network. It is highly anticipated in 2026 due to expected large-scale vacancies.
-                </p>
-                <a href={EXTERNAL_LINKS.testSeries} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm font-bold hover:underline">RRB Mock Tests &rarr;</a>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2 flex items-center gap-2">
-                  <ExternalLink className="h-5 w-5 text-brand-yellow" /> ESIC Nursing Officer
-                </h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  The <strong>Employees' State Insurance Corporation</strong> recruits nursing officers for its hospitals across India. These posts offer excellent job security and central government allowances.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2 flex items-center gap-2">
-                  <ExternalLink className="h-5 w-5 text-brand-yellow" /> DSSSB Nursing Officer
-                </h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  The <strong>Delhi Subordinate Services Selection Board</strong> conducts exams for nursing posts in Delhi Government hospitals (like LNJP, GTB). A top choice for those wishing to work in the capital.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2 flex items-center gap-2">
-                  <ExternalLink className="h-5 w-5 text-brand-yellow" /> JIPMER & PGIMER
-                </h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  <strong>JIPMER (Puducherry)</strong> and <strong>PGIMER (Chandigarh)</strong> are autonomous institutes of national importance. Their exams are known for high difficulty levels and focus on research/academic oriented nursing.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2 flex items-center gap-2">
-                  <ExternalLink className="h-5 w-5 text-brand-yellow" /> Military Nursing Service (MNS)
-                </h4>
-                <p className="text-sm text-gray-600 mb-4">
-                  A commissioned officer post in the <strong>Indian Army, Navy, or Air Force</strong>. This is a unique opportunity for female candidates to serve the nation in uniform with the rank of Lieutenant.
-                </p>
-              </div>
-
-              {/* State & Other Exams */}
-              <div className="col-span-1 md:col-span-2 mt-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6 bg-gray-100 p-3 rounded-lg">State PSC & NHM Exams</h3>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2">UPPSC Staff Nurse</h4>
-                <p className="text-sm text-gray-600">
-                  Uttar Pradesh Public Service Commission recruits thousands of nurses for state medical colleges and hospitals. It often involves a Prelims and Mains structure.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2">OSSSC Nursing Officer</h4>
-                <p className="text-sm text-gray-600">
-                  Odisha Sub-ordinate Staff Selection Commission conducts recruitment for district-level posts in Odisha. Known for regular vacancies.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2">NHM CHO (All States)</h4>
-                <p className="text-sm text-gray-600">
-                  <strong>Community Health Officer</strong> exams are conducted by National Health Missions of various states (MP, Rajasthan, Bihar, UP). These are critical for strengthening rural healthcare.
-                </p>
-                <a href={EXTERNAL_LINKS.pyq} target="_blank" rel="noopener noreferrer" className="text-blue-600 text-sm font-bold hover:underline">Download CHO PYQs &rarr;</a>
-              </div>
-
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 hover:border-brand-yellow transition-colors">
-                <h4 className="text-xl font-bold text-brand-dark mb-2">Other State Exams</h4>
-                <p className="text-sm text-gray-600">
-                  Includes <strong>BTSC (Bihar)</strong>, <strong>UKMSSB (Uttarakhand)</strong>, <strong>HSSC (Haryana)</strong>, <strong>DHS (Maharashtra)</strong>, and <strong>KPSC (Kerala)</strong>. Each has specific domicile and language requirements.
-                </p>
-              </div>
-              
-            </div>
-
             <div className="mt-12 bg-blue-50 p-8 rounded-xl border border-blue-100 text-center">
               <h3 className="text-2xl font-bold text-blue-900 mb-4">Ready to Start Your Preparation?</h3>
               <p className="text-blue-800 mb-6 max-w-2xl mx-auto">
@@ -408,6 +327,20 @@ export const Home: React.FC = () => {
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Exams Covered by NPrep (Footer Section) */}
+      <section className="bg-brand-dark border-t border-gray-800 py-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h3 className="text-brand-yellow font-bold text-lg mb-6 text-center uppercase tracking-wider">Exams Covered by NPrep</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
+            {['AIIMS NORCET', 'RRB Nursing Supt.', 'ESIC Nursing Officer', 'DSSSB', 'UPPSC Staff Nurse', 'CHO (All States)', 'JIPMER', 'PGIMER', 'MNS', 'GMCH', 'SGPGI', 'RML'].map((exam, idx) => (
+              <div key={idx} className="bg-gray-800/50 rounded p-3 text-gray-300 text-sm font-medium hover:text-white hover:bg-gray-700 transition-colors cursor-default">
+                {exam}
+              </div>
+            ))}
           </div>
         </div>
       </section>
