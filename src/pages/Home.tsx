@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
-import { ArrowRight, CheckCircle, BookOpen, Trophy, ExternalLink, Star, Zap, Target, Award, XCircle, AlertCircle } from 'lucide-react';
+import { ArrowRight, CheckCircle, Trophy, ExternalLink, Star, Zap, Target, Award } from 'lucide-react';
 import { EXAMS, EXTERNAL_LINKS, REVIEWS, COMPARISON_DATA } from '../data/mockData';
 
 export const Home: React.FC = () => {
@@ -14,7 +14,7 @@ export const Home: React.FC = () => {
       
       {/* Hero Section - Center Aligned */}
       <section className="bg-brand-dark text-white relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551076805-e1869033e561?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] opacity-10 bg-cover bg-center"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] opacity-10 bg-cover bg-center"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
@@ -93,7 +93,7 @@ export const Home: React.FC = () => {
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
                   <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-200 text-sm"><strong>Top Rankers:</strong> Produced consistent Top 100 rankers in NORCET 6 & 7.</span>
+                  <span className="text-gray-200 text-sm"><strong>500+ Rankers in NORCET 9:</strong> Produced consistent results in recent cycles.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
@@ -110,6 +110,68 @@ export const Home: React.FC = () => {
               </ul>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* Floating Reviews Section */}
+      <section className="py-12 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900">Student Feedback</h2>
+          <p className="text-gray-600 mt-2">Unbiased reviews from verified users</p>
+        </div>
+        
+        <div className="relative w-full marquee-container">
+          {/* 
+             We use w-max to allow the content to expand naturally.
+             The two inner divs contain identical content to create the seamless loop.
+             Gap-8 ensures no overlapping.
+          */}
+          <div className="flex w-max animate-scroll-ltr hover:pause-on-hover">
+            {/* First Set */}
+            <div className="flex gap-8 px-4">
+              {REVIEWS.map((review) => (
+                <div key={`review-1-${review.id}`} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 w-[320px] flex-shrink-0">
+                  <div className="flex items-center gap-1 mb-3">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 text-sm mb-4 italic leading-relaxed">"{review.text}"</p>
+                  <div className="flex items-center gap-3">
+                    <div className="bg-brand-dark text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs flex-shrink-0">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="font-bold text-gray-900 text-sm">{review.name}</div>
+                      <div className="text-xs text-gray-500">{review.role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            {/* Duplicate Set for Infinite Scroll */}
+            <div className="flex gap-8 px-4">
+              {REVIEWS.map((review) => (
+                <div key={`review-2-${review.id}`} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 w-[320px] flex-shrink-0">
+                  <div className="flex items-center gap-1 mb-3">
+                    {[...Array(review.rating)].map((_, i) => (
+                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
+                    ))}
+                  </div>
+                  <p className="text-gray-700 text-sm mb-4 italic leading-relaxed">"{review.text}"</p>
+                  <div className="flex items-center gap-3">
+                    <div className="bg-brand-dark text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs flex-shrink-0">
+                      {review.name.charAt(0)}
+                    </div>
+                    <div>
+                      <div className="font-bold text-gray-900 text-sm">{review.name}</div>
+                      <div className="text-xs text-gray-500">{review.role}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -164,63 +226,6 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Floating Reviews Section */}
-      <section className="py-12 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900">Student Feedback</h2>
-          <p className="text-gray-600 mt-2">Unbiased reviews from verified users</p>
-        </div>
-        
-        <div className="relative w-full marquee-container">
-          <div className="flex w-[200%] animate-scroll-ltr hover:pause-on-hover">
-            {/* First Set */}
-            <div className="flex w-1/2 justify-around gap-6 px-4">
-              {REVIEWS.map((review) => (
-                <div key={`review-1-${review.id}`} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 min-w-[300px] max-w-[350px] flex-shrink-0">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 text-sm mb-4 italic">"{review.text}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-brand-dark text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs">
-                      {review.name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="font-bold text-gray-900 text-sm">{review.name}</div>
-                      <div className="text-xs text-gray-500">{review.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* Duplicate Set for Infinite Scroll */}
-            <div className="flex w-1/2 justify-around gap-6 px-4">
-              {REVIEWS.map((review) => (
-                <div key={`review-2-${review.id}`} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 min-w-[300px] max-w-[350px] flex-shrink-0">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 text-sm mb-4 italic">"{review.text}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-brand-dark text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs">
-                      {review.name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="font-bold text-gray-900 text-sm">{review.name}</div>
-                      <div className="text-xs text-gray-500">{review.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* SEO Authority Block - Focused on Exam Strategy */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -267,49 +272,7 @@ export const Home: React.FC = () => {
               </table>
             </div>
 
-            <h3 className="text-2xl font-bold text-gray-900 mt-12 mb-6">Eligibility Blueprint for 2026 Exams</h3>
-            <div className="overflow-x-auto mb-10">
-              <table className="min-w-full bg-white border border-gray-300 shadow-sm rounded-lg overflow-hidden">
-                <thead className="bg-brand-dark text-white">
-                  <tr>
-                    <th className="py-4 px-6 text-left font-semibold w-1/3">Examination</th>
-                    <th className="py-4 px-6 text-left font-semibold">Required Qualifications & Age Limit</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-gray-200 text-sm">
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-bold text-brand-dark align-top">AIIMS NORCET</td>
-                    <td className="py-4 px-6">
-                      <ul className="list-disc pl-4 space-y-1 text-gray-600">
-                        <li><strong>B.Sc Nursing:</strong> No experience required.</li>
-                        <li><strong>GNM:</strong> Minimum 2 years of experience in a 50-bedded hospital.</li>
-                        <li><strong>Age:</strong> 18-30 Years (Relaxation for reserved categories).</li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-bold text-brand-dark align-top">RRB Nursing Superintendent</td>
-                    <td className="py-4 px-6">
-                      <ul className="list-disc pl-4 space-y-1 text-gray-600">
-                        <li>GNM or B.Sc Nursing from a recognized institution.</li>
-                        <li>Must be a registered nurse with Indian Nursing Council.</li>
-                        <li><strong>Age:</strong> 20-40 Years (Generally higher upper limit).</li>
-                      </ul>
-                    </td>
-                  </tr>
-                  <tr className="hover:bg-gray-50">
-                    <td className="py-4 px-6 font-bold text-brand-dark align-top">Military Nursing Service (MNS)</td>
-                    <td className="py-4 px-6">
-                      <ul className="list-disc pl-4 space-y-1 text-gray-600">
-                        <li>M.Sc Nursing / PB B.Sc Nursing / B.Sc Nursing.</li>
-                        <li>Only for Female candidates.</li>
-                        <li>Physical fitness standards apply.</li>
-                      </ul>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+            {/* Removed Eligibility Blueprint Table as requested */}
             
             <div className="mt-12 bg-blue-50 p-8 rounded-xl border border-blue-100 text-center">
               <h3 className="text-2xl font-bold text-blue-900 mb-4">Ready to Start Your Preparation?</h3>

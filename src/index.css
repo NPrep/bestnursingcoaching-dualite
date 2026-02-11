@@ -8,21 +8,25 @@
   }
 }
 
-@keyframes scroll-left-to-right {
+/* 
+  Infinite Scroll Animation (Left to Right)
+  Start at -50% (showing the second half) and move to 0% (showing the first half).
+  Since both halves are identical, the jump back to -50% is seamless.
+*/
+@keyframes scroll-ltr {
   0% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
   100% {
     transform: translateX(0%);
   }
 }
 
-/* Slowed down from 40s to 100s for a gentle float */
 .animate-scroll-ltr {
-  animation: scroll-left-to-right 100s linear infinite;
+  animation: scroll-ltr 80s linear infinite; /* Smooth, slow float */
 }
 
-/* Ensure smooth scrolling for the marquee */
+/* Ensure smooth scrolling for the marquee with fade edges */
 .marquee-container {
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
