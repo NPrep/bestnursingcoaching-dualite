@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://bestnursingcoaching.com/sitemap.xml
+
+Sitemap: https://genomicnursing.com/sitemap.xml
