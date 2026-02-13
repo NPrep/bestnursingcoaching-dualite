@@ -44,7 +44,26 @@
     "reactSnap":  {
                       "source":  "dist",
                       "include":  [
-                                      "/"
+                                      "/",
+                                      "/best-nursing-coaching-in-india",
+                                      "/blog",
+                                      "/blog/best-books-for-nursing-exams",
+                                      "/blog/best-nursing-coaching-in-india",
+                                      "/blog/cho-exam-preparation-guide",
+                                      "/blog/how-to-manage-clinical-duties-study",
+                                      "/blog/mns-exam-eligibility-pattern",
+                                      "/blog/norcet-7-paper-analysis",
+                                      "/blog/online-vs-offline-nursing-coaching",
+                                      "/blog/rrb-nursing-superintendent-strategy",
+                                      "/blog/why-pyqs-matter-in-nursing-exams",
+                                      "/exams",
+                                      "/exams/aiims-norcet-nursing-exam",
+                                      "/exams/dsssb-nursing-officer-exam",
+                                      "/exams/esic-nursing-officer",
+                                      "/exams/rrb-nursing-superintendent-exam",
+                                      "/nursing-exam-courses",
+                                      "/nursing-pyq",
+                                      "/nursing-test-series"
                                   ],
                       "crawl":  true,
                       "inlineCss":  true,
