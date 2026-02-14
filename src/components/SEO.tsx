@@ -1,5 +1,6 @@
 import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import Head from 'next/head';
+import { useLocation } from 'react-router-dom';
 
 interface SEOProps {
   title: string;
@@ -10,10 +11,12 @@ interface SEOProps {
 export const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {
   const siteTitle = "Best Nursing Coaching";
   const fullTitle = `${title} | ${siteTitle}`;
-  const currentUrl = canonical || window.location.href;
+  const siteUrl = "https://bestnursingcoaching.com";
+  const { pathname } = useLocation();
+  const currentUrl = canonical || `${siteUrl}${pathname}`;
 
   return (
-    <Helmet>
+    <Head>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
       <link rel="canonical" href={currentUrl} />
@@ -23,6 +26,6 @@ export const SEO: React.FC<SEOProps> = ({ title, description, canonical }) => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
-    </Helmet>
+    </Head>
   );
 };

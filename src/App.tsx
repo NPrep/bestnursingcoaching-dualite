@@ -1,7 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { HelmetProvider } from 'react-helmet-async';
+import { Routes, Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
+import { RouterWrapper } from './next/RouterWrapper';
 
 // Pages
 import { Home } from './pages/Home';
@@ -14,33 +14,35 @@ import { TestSeries } from './pages/TestSeries';
 import { BlogList } from './pages/BlogList';
 import { BlogPost } from './pages/BlogPost';
 
-function App() {
+type AppProps = {
+  initialPath?: string;
+};
+
+function App({ initialPath = '/' }: AppProps) {
   return (
-    <HelmetProvider>
-      <Router>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            
-            {/* Exam Routes */}
-            <Route path="exams" element={<ExamDirectory />} />
-            <Route path="exams/:slug" element={<ExamDetail />} />
-            
-            {/* Comparison Route */}
-            <Route path="best-nursing-coaching-in-india" element={<CoachingComparison />} />
-            
-            {/* Resources Routes */}
-            <Route path="nursing-exam-courses" element={<Courses />} />
-            <Route path="nursing-pyq" element={<PYQHub />} />
-            <Route path="nursing-test-series" element={<TestSeries />} />
-            
-            {/* Blog Routes */}
-            <Route path="blog" element={<BlogList />} />
-            <Route path="blog/:slug" element={<BlogPost />} />
-          </Route>
-        </Routes>
-      </Router>
-    </HelmetProvider>
+    <RouterWrapper initialPath={initialPath}>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          
+          {/* Exam Routes */}
+          <Route path="exams" element={<ExamDirectory />} />
+          <Route path="exams/:slug" element={<ExamDetail />} />
+          
+          {/* Comparison Route */}
+          <Route path="best-nursing-coaching-in-india" element={<CoachingComparison />} />
+          
+          {/* Resources Routes */}
+          <Route path="nursing-exam-courses" element={<Courses />} />
+          <Route path="nursing-pyq" element={<PYQHub />} />
+          <Route path="nursing-test-series" element={<TestSeries />} />
+          
+          {/* Blog Routes */}
+          <Route path="blog" element={<BlogList />} />
+          <Route path="blog/:slug" element={<BlogPost />} />
+        </Route>
+      </Routes>
+    </RouterWrapper>
   );
 }
 
