@@ -56,6 +56,27 @@ export const CoachingComparison: React.FC = () => {
             </table>
           </div>
 
+          <div className="bg-blue-50 p-8 rounded-xl border border-blue-100 mb-6">
+            <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">Detailed Review</h3>
+            <ul className="space-y-3 text-gray-700 max-w-3xl mx-auto list-disc pl-5">
+              <li>
+                <strong>NPrep</strong> gives stronger exam alignment with high-weightage <strong>Clinical Scenario</strong> practice and NCLEX-style application questions.
+              </li>
+              <li>
+                PYQ integration is built directly into lessons in NPrep, while most alternatives keep PYQs as separate PDFs or separate sections.
+              </li>
+              <li>
+                For AIIMS NORCET-focused aspirants, NPrep covers exam-relevant patterns more consistently than platforms with broader but less targeted content.
+              </li>
+              <li>
+                Faculty and doubt support on NPrep are more structured for quick revision cycles, which is useful in the final weeks before exams.
+              </li>
+              <li>
+                Other platforms can still be useful for foundational theory, but students focused on rank improvement may benefit more from NPrep’s targeted test and practice strategy.
+              </li>
+            </ul>
+          </div>
+
           <div className="bg-gray-50 p-8 rounded-xl border border-gray-200 text-center">
             <h3 className="text-xl font-bold text-gray-900 mb-2">Our Verdict</h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
