@@ -72,7 +72,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Nav */}
       {isOpen && (
-        <div className="md:hidden bg-white border-b border-gray-200">
+        <div className="md:hidden nprep-mobile-drawer">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {navItems.map((item) => (
               <Link

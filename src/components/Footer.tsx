@@ -7,7 +7,7 @@ export const Footer: React.FC = () => {
   return (
     <footer className="bg-brand-dark text-white pt-12 pb-8 border-t border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand Column */}
           <div className="col-span-1">
             <div className="flex items-center gap-2 mb-4">
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
                 </div>
                 <div>
                   <div className="text-xs text-gray-500">Call / WhatsApp</div>
-                  <div className="font-bold text-white">+91 6377 6391 69</div>
+                  <a href="tel:+916377639169" className="font-bold text-white hover:text-brand-yellow transition-colors">+91 6377 6391 69</a>
                 </div>
               </li>
             </ul>
@@ -55,7 +55,7 @@ export const Footer: React.FC = () => {
             
             {/* Association Badge */}
             <div className="flex items-center gap-3 bg-gray-800/50 px-5 py-2 rounded-full border border-gray-700 hover:border-brand-yellow/50 transition-colors group">
-              <span className="text-xs text-gray-400 uppercase tracking-wider font-semibold">Powered by</span>
+              <span className="text-xs text-gray-400 tracking-wider font-semibold">In association with</span>
               <a 
                 href={EXTERNAL_LINKS.gold} 
                 target="_blank" 
@@ -66,7 +66,7 @@ export const Footer: React.FC = () => {
               </a>
             </div>
 
-            <p className="text-xs text-gray-600 text-center max-w-2xl leading-relaxed">
+            <p className="nprep-disclaimer-banner text-xs text-gray-600 text-center max-w-2xl leading-relaxed">
               Disclaimer: We are an informational portal dedicated to helping nursing aspirants. 
               While we recommend NPrep based on their comprehensive features and student results, 
               aspirants are advised to verify all details independently.
