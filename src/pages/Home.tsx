@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
+import { EXTERNAL_LINKS, COMPARISON_DATA } from '../data/mockData';
 import { ArrowRight, CheckCircle, Trophy, ExternalLink, Star, Zap, Target, Award } from 'lucide-react';
 import { EXAMS, EXTERNAL_LINKS, COMPARISON_DATA } from '../data/mockData';
 
@@ -18,23 +20,20 @@ export const Home: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Best <span className="text-brand-yellow">Nursing Coaching</span> in India
+              Nursing Coaching Guide — Compare Platforms &amp; Choose What's Right for You
             </h1>
             <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-3xl mx-auto">
               Your one-stop destination to crack AIIMS NORCET, RRB Nursing Superintendent, and State Nursing Officer exams. 
               We evaluate top platforms to help you choose the right mentor.
             </p>
             
-            {/* Core Product Buttons */}
+            {/* Neutral CTAs */}
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <a href={EXTERNAL_LINKS.gold} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-brand-yellow text-brand-dark px-8 py-4 rounded-md font-bold hover:bg-yellow-400 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-yellow-500/20">
-                <Award className="h-5 w-5" /> Gold Batch
+              <a href="#comparison-matrix" className="w-full sm:w-auto bg-brand-yellow text-brand-dark px-8 py-4 rounded-md font-bold hover:bg-yellow-400 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-yellow-500/20">
+                See Comparison
               </a>
-              <a href={EXTERNAL_LINKS.testSeries} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-white text-brand-dark px-8 py-4 rounded-md font-bold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
-                <Target className="h-5 w-5" /> Test Series
-              </a>
-              <a href={EXTERNAL_LINKS.rapid} target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto bg-red-600 text-white px-8 py-4 rounded-md font-bold hover:bg-red-700 transition-colors flex items-center justify-center gap-2 shadow-lg shadow-red-600/20">
-                <Zap className="h-5 w-5" /> Rapid Revision
+              <a href="#comparison-criteria" className="w-full sm:w-auto bg-white text-brand-dark px-8 py-4 rounded-md font-bold hover:bg-gray-100 transition-colors flex items-center justify-center gap-2">
+                What to Look For
               </a>
             </div>
           </div>
@@ -42,7 +41,7 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Intro / Authority Section */}
-      <section className="py-16 bg-white">
+      <section id="comparison-criteria" className="py-16 bg-white scroll-mt-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Why Nursing Exams Require Coaching</h2>
@@ -84,28 +83,24 @@ export const Home: React.FC = () => {
               </ul>
             </div>
 
-            {/* NPrep Achievements */}
+            {/* Balanced Snapshot */}
             <div className="bg-brand-dark text-white p-8 rounded-xl border border-gray-700 relative overflow-hidden">
               <div className="absolute top-0 right-0 -mt-4 -mr-4 bg-brand-yellow/10 w-32 h-32 rounded-full blur-2xl"></div>
-              <h3 className="text-xl font-bold text-brand-yellow mb-6 flex items-center gap-2">
-                <Trophy className="h-6 w-6" /> NPrep Achievements
+              <h3 className="text-xl font-bold text-brand-yellow mb-6">
+                Platform Snapshot (NPrep + Alternatives)
               </h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-200 text-sm"><strong>500+ Rankers in NORCET 9:</strong> Produced consistent results in recent cycles.</span>
+                  <span className="text-gray-200 text-sm"><strong>NPrep:</strong> Strong focus on AIIMS NORCET-style clinical scenario practice and PYQ mapping.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-200 text-sm"><strong>Selection Ratio:</strong> Highest selection-to-student ratio in Central Govt exams.</span>
+                  <span className="text-gray-200 text-sm"><strong>Nursing Next Live:</strong> Useful for live schedule-driven classes and routine-based learners.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-200 text-sm"><strong>Content Innovation:</strong> First platform to introduce "Clinical Vignette" training for Mains.</span>
+                  <span className="text-gray-200 text-sm"><strong>Nursing Wallah:</strong> Often a lower-cost option for foundation-level concept refreshers.</span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <Star className="h-5 w-5 text-brand-yellow flex-shrink-0 mt-0.5" />
-                  <span className="text-gray-200 text-sm"><strong>QBank Authority:</strong> 30,000+ verified questions with video rationales.</span>
+                  <span className="text-gray-200 text-sm"><strong>Adda247:</strong> Broad exam ecosystem that can help aspirants who also prepare for non-nursing aptitude sections.</span>
                 </li>
               </ul>
             </div>
@@ -114,6 +109,26 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
+      {/* Independent Reviews Section */}
+      <section className="py-12 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
+          <h2 className="text-2xl font-bold text-gray-900">What students say across platforms</h2>
+          <p className="text-gray-600 mt-2">Use independent public reviews to validate your final decision.</p>
+        </div>
+
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a href="https://play.google.com/store/search?q=nursing%20coaching&c=apps" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-blue-300 transition-colors">
+              <h3 className="font-bold text-gray-900 mb-2">Google Play Reviews</h3>
+              <p className="text-sm text-gray-600">Compare ratings and recent comments for NPrep, Nursing Next Live, and Nursing Wallah.</p>
+            </a>
+            <a href="https://www.youtube.com/results?search_query=nursing+coaching+review" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-blue-300 transition-colors">
+              <h3 className="font-bold text-gray-900 mb-2">YouTube User Reviews</h3>
+              <p className="text-sm text-gray-600">Check long-form student experiences, pros/cons, and course walkthroughs.</p>
+            </a>
+            <a href="https://www.reddit.com/search/?q=nursing%20coaching%20india" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-blue-300 transition-colors">
+              <h3 className="font-bold text-gray-900 mb-2">Community Discussions</h3>
+              <p className="text-sm text-gray-600">Review discussion threads where users compare instructor quality and support response times.</p>
       {/* Testimonials */}
       <section className="py-12 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,13 +147,14 @@ export const Home: React.FC = () => {
       </section>
 
       {/* Comparison Table Section */}
-      <section className="py-16 bg-gray-50 border-y border-gray-200">
+      <section id="comparison-matrix" className="py-16 bg-gray-50 border-y border-gray-200 scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-gray-900">Coaching Comparison Matrix</h2>
             <p className="mt-4 text-gray-600 max-w-2xl mx-auto">
               We compared the top nursing coaching platforms on parameters that matter for your selection.
             </p>
+            <p className="mt-2 text-sm text-gray-500">Last verified: February 2026</p>
           </div>
 
           <div className="overflow-x-auto shadow-lg rounded-lg border border-gray-200 bg-white">
@@ -146,11 +162,8 @@ export const Home: React.FC = () => {
               <thead>
                 <tr className="bg-gray-100 text-sm uppercase tracking-wider">
                   <th className="p-6 font-bold text-gray-600 w-1/5 sticky left-0 bg-gray-100 z-10 border-r border-gray-200">Feature</th>
-                  <th className="p-6 text-center w-1/5 bg-yellow-50 border-x-2 border-brand-yellow relative pt-10">
-                    <div className="absolute top-2 left-1/2 transform -translate-x-1/2 bg-brand-yellow text-brand-dark text-[10px] font-bold px-3 py-1 rounded-full shadow-sm whitespace-nowrap z-20">
-                      RECOMMENDED
-                    </div>
-                    <span className="text-xl font-bold text-brand-dark block mt-2">NPrep</span>
+                  <th className="p-6 text-center w-1/5 font-semibold text-gray-700 border-r border-gray-100">
+                    <span className="text-xl font-bold text-gray-900 block mt-2">NPrep</span>
                   </th>
                   <th className="p-6 text-center w-1/5 font-semibold text-gray-700 border-r border-gray-100">Nursing Next Live</th>
                   <th className="p-6 text-center w-1/5 font-semibold text-gray-700 border-r border-gray-100">Nursing Wallah</th>
@@ -161,7 +174,7 @@ export const Home: React.FC = () => {
                 {COMPARISON_DATA.map((row, idx) => (
                   <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50/50'}>
                     <td className="p-5 font-bold text-gray-800 sticky left-0 bg-inherit border-r border-gray-200 z-10">{row.parameter}</td>
-                    <td className="p-5 text-center bg-yellow-50/30 border-x-2 border-yellow-100 font-bold text-brand-dark">
+                    <td className="p-5 text-center text-gray-600 border-r border-gray-100">
                       {row.nprep}
                     </td>
                     <td className="p-5 text-center text-gray-600 border-r border-gray-100">{row.nnl}</td>
@@ -169,6 +182,11 @@ export const Home: React.FC = () => {
                     <td className="p-5 text-center text-gray-600">{row.adda}</td>
                   </tr>
                 ))}
+                <tr className="bg-blue-50/60">
+                  <td colSpan={5} className="p-4 text-sm text-gray-700">
+                    NPrep is the publisher of this comparison. Data is based on our editorial assessment and may not reflect independent testing.
+                  </td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -178,6 +196,21 @@ export const Home: React.FC = () => {
               Read Detailed Review <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      <section id="methodology" className="py-16 bg-white border-b border-gray-200">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-6">Methodology</h2>
+          <p className="text-gray-600 text-center max-w-3xl mx-auto mb-8">
+            We reviewed publicly available course pages, sample content, app listings, and student feedback forums between January–February 2026.
+          </p>
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-700">
+            <li className="bg-gray-50 border border-gray-200 rounded-lg p-4"><strong>Content fit:</strong> syllabus coverage and alignment with recent AIIMS/RRB patterns.</li>
+            <li className="bg-gray-50 border border-gray-200 rounded-lg p-4"><strong>Practice quality:</strong> PYQ relevance, mock depth, and explanation quality.</li>
+            <li className="bg-gray-50 border border-gray-200 rounded-lg p-4"><strong>Learning support:</strong> doubt resolution flow, class cadence, and revision support.</li>
+            <li className="bg-gray-50 border border-gray-200 rounded-lg p-4"><strong>Value:</strong> pricing transparency, trial availability, and feature consistency over time.</li>
+          </ul>
         </div>
       </section>
 
@@ -230,14 +263,13 @@ export const Home: React.FC = () => {
             {/* Removed Eligibility Blueprint Table as requested */}
             
             <div className="mt-12 bg-blue-50 p-8 rounded-xl border border-blue-100 text-center">
-              <h3 className="text-2xl font-bold text-blue-900 mb-4">Ready to Start Your Preparation?</h3>
+              <h3 className="text-2xl font-bold text-blue-900 mb-4">Ready to Shortlist a Platform?</h3>
               <p className="text-blue-800 mb-6 max-w-2xl mx-auto">
-                Don't wait for the notification. The syllabus is vast, and early starters have the advantage. 
-                Join the <strong>Gold Batch</strong> for comprehensive coverage of all the exams listed above.
+                Start with the comparison matrix, verify recent independent reviews, and choose the platform that best matches your exam timeline and budget.
               </p>
               <div className="flex justify-center gap-4">
-                <a href={EXTERNAL_LINKS.gold} target="_blank" rel="noopener noreferrer" className="bg-brand-yellow text-brand-dark px-8 py-3 rounded-md font-bold hover:bg-yellow-400 transition-colors shadow-sm">
-                  Join Gold Batch
+                <a href="#comparison-matrix" className="bg-brand-yellow text-brand-dark px-8 py-3 rounded-md font-bold hover:bg-yellow-400 transition-colors shadow-sm">
+                  Review Comparison
                 </a>
                 <a href={EXTERNAL_LINKS.freeResources} target="_blank" rel="noopener noreferrer" className="bg-white text-blue-600 px-8 py-3 rounded-md font-bold hover:bg-gray-50 transition-colors shadow-sm border border-blue-200">
                   Access Free Resources
@@ -249,10 +281,10 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Exams Covered by NPrep (Footer Section) */}
+      {/* Nursing Exams Covered (Footer Section) */}
       <section className="bg-brand-dark border-t border-gray-800 py-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h3 className="text-brand-yellow font-bold text-lg mb-6 text-center uppercase tracking-wider">Exams Covered by NPrep</h3>
+          <h3 className="text-brand-yellow font-bold text-lg mb-6 text-center uppercase tracking-wider">Nursing Exams Covered</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 text-center">
             {['AIIMS NORCET', 'RRB Nursing Supt.', 'ESIC Nursing Officer', 'DSSSB', 'UPPSC Staff Nurse', 'CHO (All States)', 'JIPMER', 'PGIMER', 'MNS', 'GMCH', 'SGPGI', 'RML'].map((exam, idx) => (
               <div key={idx} className="bg-gray-800/50 rounded p-3 text-gray-300 text-sm font-medium hover:text-white hover:bg-gray-700 transition-colors cursor-default">

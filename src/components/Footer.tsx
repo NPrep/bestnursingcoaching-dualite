@@ -17,7 +17,7 @@ export const Footer: React.FC = () => {
               <span className="font-bold text-lg">BestNursingCoaching</span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed mb-6">
-              India's most trusted discovery platform for nursing exam preparation. We help students find the best coaching, resources, and strategies for NORCET, RRB, and State exams.
+              A nursing exam discovery guide for NORCET, RRB, and State exam aspirants. We compare multiple platforms, resources, and study strategies to support informed decisions.
             </p>
           </div>
 
@@ -66,6 +66,8 @@ export const Footer: React.FC = () => {
               </a>
             </div>
 
+            <p className="text-xs text-gray-600 text-center max-w-2xl leading-relaxed">
+              Disclaimer: This website is owned and operated by NPrep. Comparisons and reviews reflect our editorial perspective, and learners should independently verify details before purchasing any course.
             <p className="nprep-disclaimer-banner text-xs text-gray-600 text-center max-w-2xl leading-relaxed">
               Disclaimer: We are an informational portal dedicated to helping nursing aspirants. 
               While we recommend NPrep based on their comprehensive features and student results, 
