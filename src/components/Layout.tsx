@@ -10,7 +10,7 @@ export const Layout: React.FC = () => {
         Disclosure: This website is owned and operated by NPrep. Reviews and comparisons reflect our editorial perspective.
       </div>
       <Header />
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         <Outlet />
       </main>
       <Footer />

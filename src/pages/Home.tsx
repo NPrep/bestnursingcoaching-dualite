@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { ArrowRight, CheckCircle, ExternalLink } from 'lucide-react';
 import { EXTERNAL_LINKS, COMPARISON_DATA } from '../data/mockData';
+import { ArrowRight, CheckCircle, Trophy, ExternalLink, Star, Zap, Target, Award } from 'lucide-react';
+import { EXAMS, EXTERNAL_LINKS, COMPARISON_DATA } from '../data/mockData';
 
 export const Home: React.FC = () => {
   return (
@@ -127,6 +129,18 @@ export const Home: React.FC = () => {
             <a href="https://www.reddit.com/search/?q=nursing%20coaching%20india" target="_blank" rel="noopener noreferrer" className="bg-white p-5 rounded-xl border border-gray-200 shadow-sm hover:border-blue-300 transition-colors">
               <h3 className="font-bold text-gray-900 mb-2">Community Discussions</h3>
               <p className="text-sm text-gray-600">Review discussion threads where users compare instructor quality and support response times.</p>
+      {/* Testimonials */}
+      <section className="py-12 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[var(--bg-light)] p-12 text-center rounded-2xl border border-[var(--border)]">
+            <h2 className="text-3xl font-semibold text-[var(--text-primary)] mb-4">Hear from real students</h2>
+            <a
+              href="https://nprep.in/blogs?filter=NORCET+Success+Story"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-[var(--accent)] text-white px-6 py-3 rounded-lg hover:bg-[var(--accent-hover)]"
+            >
+              Read verified success stories on NPrep
             </a>
           </div>
         </div>
