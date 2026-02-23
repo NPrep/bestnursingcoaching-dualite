@@ -283,35 +283,35 @@ export const BLOGS = [
 export const REVIEWS = [
   {
     id: 1,
-    name: "Priya Sharma",
+    name: "NPrep learner",
     role: "AIIMS NORCET Rank 142",
     text: "The Gold Batch changed my life. The clinical scenarios are exactly like what came in the exam. NPrep's faculty is unmatched.",
     rating: 5
   },
   {
     id: 2,
-    name: "Rahul Verma",
+    name: "NPrep learner",
     role: "RRB Nursing Superintendent Aspirant",
     text: "Rapid Revision 2.0 helped me clear my concepts in just 2 months. The daily test series kept me on track.",
     rating: 5
   },
   {
     id: 3,
-    name: "Anjali Gupta",
+    name: "NPrep learner",
     role: "CHO Selection",
     text: "Best Test Series for Nursing. The explanations are detailed and the analytics helped me find my weak areas instantly.",
     rating: 5
   },
   {
     id: 4,
-    name: "Vikram Singh",
+    name: "NPrep learner",
     role: "Nursing Student",
     text: "Finally a platform that teaches concepts, not just rote learning. The PYQ integration in lectures is a game changer.",
     rating: 5
   },
   {
     id: 5,
-    name: "Sneha Patel",
+    name: "NPrep learner",
     role: "ESIC Nursing Officer",
     text: "I used the NPrep QBank for 3 months and saw a massive improvement in my mock scores. Highly recommended!",
     rating: 5

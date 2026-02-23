@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { SEO } from '../components/SEO';
 import { ArrowRight, CheckCircle, Trophy, ExternalLink, Star, Zap, Target, Award } from 'lucide-react';
-import { EXAMS, EXTERNAL_LINKS, REVIEWS, COMPARISON_DATA } from '../data/mockData';
+import { EXAMS, EXTERNAL_LINKS, COMPARISON_DATA } from '../data/mockData';
 
 export const Home: React.FC = () => {
   return (
@@ -114,64 +114,19 @@ export const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* Floating Reviews Section */}
+      {/* Testimonials */}
       <section className="py-12 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center">
-          <h2 className="text-2xl font-bold text-gray-900">Student Feedback</h2>
-          <p className="text-gray-600 mt-2">Unbiased reviews from verified users</p>
-        </div>
-        
-        <div className="relative w-full marquee-container">
-          {/* 
-             We use w-max to allow the content to expand naturally.
-             The two inner divs contain identical content to create the seamless loop.
-             Gap-8 ensures no overlapping.
-          */}
-          <div className="flex w-max animate-scroll-ltr hover:pause-on-hover">
-            {/* First Set */}
-            <div className="flex gap-8 px-4">
-              {REVIEWS.map((review) => (
-                <div key={`review-1-${review.id}`} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 w-[320px] flex-shrink-0">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 text-sm mb-4 italic leading-relaxed">"{review.text}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-brand-dark text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs flex-shrink-0">
-                      {review.name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="font-bold text-gray-900 text-sm">{review.name}</div>
-                      <div className="text-xs text-gray-500">{review.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-            {/* Duplicate Set for Infinite Scroll */}
-            <div className="flex gap-8 px-4">
-              {REVIEWS.map((review) => (
-                <div key={`review-2-${review.id}`} className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 w-[320px] flex-shrink-0">
-                  <div className="flex items-center gap-1 mb-3">
-                    {[...Array(review.rating)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 text-sm mb-4 italic leading-relaxed">"{review.text}"</p>
-                  <div className="flex items-center gap-3">
-                    <div className="bg-brand-dark text-white rounded-full w-8 h-8 flex items-center justify-center font-bold text-xs flex-shrink-0">
-                      {review.name.charAt(0)}
-                    </div>
-                    <div>
-                      <div className="font-bold text-gray-900 text-sm">{review.name}</div>
-                      <div className="text-xs text-gray-500">{review.role}</div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-[var(--bg-light)] p-12 text-center rounded-2xl border border-[var(--border)]">
+            <h2 className="text-3xl font-semibold text-[var(--text-primary)] mb-4">Hear from real students</h2>
+            <a
+              href="https://nprep.in/blogs?filter=NORCET+Success+Story"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center bg-[var(--accent)] text-white px-6 py-3 rounded-lg hover:bg-[var(--accent-hover)]"
+            >
+              Read verified success stories on NPrep
+            </a>
           </div>
         </div>
       </section>
