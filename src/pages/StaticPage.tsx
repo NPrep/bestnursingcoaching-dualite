@@ -19,9 +19,25 @@ export const StaticPage: React.FC = () => {
 
   const page = STATIC_PAGES[slug];
 
+  const faqSchema = page.faqs?.length
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: page.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
   return (
     <>
       <SEO title={page.title} description={page.description} />
+      {faqSchema && <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>}
       <div className="bg-white py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-8">{page.title}</h1>
@@ -61,6 +77,20 @@ export const StaticPage: React.FC = () => {
                     ))}
                   </tbody>
                 </table>
+              </div>
+            </section>
+          )}
+
+          {page.faqs && page.faqs.length > 0 && (
+            <section className="mt-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">Frequently Asked Questions</h2>
+              <div className="space-y-3">
+                {page.faqs.map((faq) => (
+                  <details key={faq.question} className="border border-gray-200 rounded-lg p-4 bg-gray-50">
+                    <summary className="font-semibold text-gray-900 cursor-pointer">{faq.question}</summary>
+                    <p className="mt-2 text-gray-700 text-sm leading-relaxed">{faq.answer}</p>
+                  </details>
+                ))}
               </div>
             </section>
           )}

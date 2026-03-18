@@ -30,6 +30,96 @@ const comparisonRows = [
     priceBand: '₹₹₹',
     bestFor: 'Aspirants who prefer physical classroom learning',
   },
+c  {
+    institute: 'Nursing Officer Academy',
+    examCoverage: 'NORCET + nursing officer exam categories',
+    delivery: 'Online batches + recorded access',
+    tests: 'Unit tests and model mocks',
+    support: 'Batch mentorship and query support',
+    priceBand: '₹₹',
+    bestFor: 'Students preferring structured online batches',
+  },
+  {
+    institute: 'Nursing Wallah',
+    examCoverage: 'General nursing exam preparation support',
+    delivery: 'Online app-based model',
+    tests: 'Topic practice and periodic tests',
+    support: 'Community-led support model',
+    priceBand: '₹',
+    bestFor: 'Budget-focused online learners',
+  },
+  {
+    institute: 'Adda247 Nursing',
+    examCoverage: 'Nursing and allied government exam categories',
+    delivery: 'Online courses + live sessions',
+    tests: 'Mock sets and quiz-based practice',
+    support: 'Centralized support desk',
+    priceBand: '₹₹',
+    bestFor: 'Aspirants who want multi-exam bundle access',
+  },
+  {
+    institute: 'Testbook Nursing',
+    examCoverage: 'Nursing officer and govt exam practice support',
+    delivery: 'Online app + test platform',
+    tests: 'Test-series-centric preparation',
+    support: 'Platform ticket-based support',
+    priceBand: '₹',
+    bestFor: 'Students prioritizing test practice',
+  },
+  {
+    institute: 'Nursing Career Academy',
+    examCoverage: 'State and central nursing job exam categories',
+    delivery: 'Hybrid model (city dependent)',
+    tests: 'Chapter tests + revision mocks',
+    support: 'Faculty guidance with batch support',
+    priceBand: '₹₹',
+    bestFor: 'Learners seeking hybrid flexibility',
+  },
+  {
+    institute: 'Target Nursing Academy',
+    examCoverage: 'Nursing officer and staff nurse recruitment exams',
+    delivery: 'Offline + online classroom integration',
+    tests: 'Classroom tests and scheduled mocks',
+    support: 'Center-led mentor assistance',
+    priceBand: '₹₹₹',
+    bestFor: 'Aspirants preferring in-person accountability',
+  },
+  {
+    institute: 'Sigma Nursing Classes',
+    examCoverage: 'Nursing competitive coaching segments',
+    delivery: 'Offline classroom + backup digital content',
+    tests: 'In-batch assessments and mock review sessions',
+    support: 'Classroom support with doubt counters',
+    priceBand: '₹₹₹',
+    bestFor: 'Students who rely on physical class discipline',
+  },
+  {
+    institute: 'Pulse Nursing Coaching',
+    examCoverage: 'Government nursing exam-focused preparation',
+    delivery: 'Online-first coaching',
+    tests: 'Regular assessment loops and practice papers',
+    support: 'Online mentor and support channels',
+    priceBand: '₹₹',
+    bestFor: 'Learners wanting frequent online testing rhythm',
+  },
+  {
+    institute: 'Carewell Nursing Institute',
+    examCoverage: 'Regional nursing exam preparation tracks',
+    delivery: 'Offline center model',
+    tests: 'Weekly tests with periodic full mocks',
+    support: 'On-site support and classroom mentoring',
+    priceBand: '₹₹₹',
+    bestFor: 'Students targeting city-specific offline ecosystems',
+  },
+  {
+    institute: 'Medistar Nursing Coaching',
+    examCoverage: 'Mixed central + state nursing exam targets',
+    delivery: 'Hybrid batches with recorded backups',
+    tests: 'Topic tests and cumulative practice sets',
+    support: 'Hybrid mentorship and revision support',
+    priceBand: '₹₹',
+    bestFor: 'Learners balancing flexibility and guided structure',
+  },
 ];
 
 const factors = [
@@ -54,45 +144,23 @@ export const Home: React.FC = () => {
             <div className="lg:col-span-2">
               <h1 className="text-2xl md:text-4xl font-bold leading-tight mb-3">Best Nursing Coaching Institutes in India</h1>
               <p className="text-slate-200 text-sm md:text-base max-w-3xl leading-relaxed mb-4">
-                Compare coaching options for AIIMS NORCET, RRB Nursing, and other government nursing exams in one place.
-                This homepage is designed as a complete decision page so you can shortlist quickly.
+                Compare major coaching options for AIIMS NORCET, RRB Nursing, and government nursing officer exams from one page.
+                Use the detailed table below to shortlist quickly.
               </p>
               <div className="flex flex-wrap gap-2 text-xs md:text-sm">
-                <span className="bg-slate-800 text-slate-100 px-3 py-1.5 rounded-full border border-slate-600">Online + Offline institutes</span>
                 <span className="bg-slate-800 text-slate-100 px-3 py-1.5 rounded-full border border-slate-600">Detailed comparison matrix</span>
-                <span className="bg-slate-800 text-slate-100 px-3 py-1.5 rounded-full border border-slate-600">Review links + selection checklist</span>
+                <span className="bg-slate-800 text-slate-100 px-3 py-1.5 rounded-full border border-slate-600">Selection checklist</span>
+                <span className="bg-slate-800 text-slate-100 px-3 py-1.5 rounded-full border border-slate-600">Review links</span>
               </div>
             </div>
             <div className="bg-slate-800 rounded-lg border border-slate-600 p-4">
-              <h2 className="text-sm font-semibold text-amber-300 mb-2">Quick Snapshot</h2>
+              <h2 className="text-sm font-semibold text-amber-300 mb-2">What you can do here</h2>
               <ul className="space-y-1.5 text-xs text-slate-200">
-                <li>• Compare top 3 coaching brands side-by-side</li>
-                <li>• Check mock support and pricing bands</li>
-                <li>• Use city pages for offline shortlist</li>
+                <li>• Compare top coaching brands side-by-side</li>
+                <li>• Check test support and price bands</li>
+                <li>• Open long-form guides from one menu</li>
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-10 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="rounded-lg border border-slate-200 p-5 bg-slate-50">
-            <h2 className="text-xl font-bold text-slate-900 mb-3">Top Online Coaching Platforms</h2>
-            <ul className="list-disc pl-5 text-slate-700 space-y-1">
-              <li><Link className="text-blue-700 hover:underline" to="/best-online-nursing-coaching">Best Online Nursing Coaching</Link></li>
-              <li><Link className="text-blue-700 hover:underline" to="/best-norcet-coaching">Best NORCET Coaching</Link></li>
-              <li><Link className="text-blue-700 hover:underline" to="/best-rrb-nursing-coaching">Best RRB Nursing Coaching</Link></li>
-            </ul>
-          </div>
-          <div className="rounded-lg border border-slate-200 p-5 bg-slate-50">
-            <h2 className="text-xl font-bold text-slate-900 mb-3">Top Offline Coaching Institutes</h2>
-            <ul className="list-disc pl-5 text-slate-700 space-y-1">
-              <li><Link className="text-blue-700 hover:underline" to="/best-nursing-coaching-delhi">Best Nursing Coaching in Delhi</Link></li>
-              <li><Link className="text-blue-700 hover:underline" to="/best-nursing-coaching-jaipur">Best Nursing Coaching in Jaipur</Link></li>
-              <li><Link className="text-blue-700 hover:underline" to="/best-nursing-coaching-lucknow">Best Nursing Coaching in Lucknow</Link></li>
-              <li><Link className="text-blue-700 hover:underline" to="/best-nursing-coaching-chandigarh">Best Nursing Coaching in Chandigarh</Link></li>
-            </ul>
           </div>
         </div>
       </section>
@@ -101,8 +169,7 @@ export const Home: React.FC = () => {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-slate-900 mb-4">Coaching Comparison Table (Detailed)</h2>
           <p className="text-slate-700 mb-5">
-            Use this table to shortlist without visiting multiple pages. Compare exam coverage, learning mode, testing quality,
-            support, and price band side by side.
+            Compare exam coverage, learning mode, practice stack, support system, and pricing in one view.
           </p>
           <div className="overflow-x-auto rounded-lg border border-slate-300 bg-white">
             <table className="w-full text-sm text-left">

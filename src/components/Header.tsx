@@ -7,14 +7,7 @@ export const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
 
-  const navItems = [
-    { name: 'Best in India', path: '/best-nursing-coaching-in-india' },
-    { name: 'Online Coaching', path: '/best-online-nursing-coaching' },
-    { name: 'NORCET Coaching', path: '/best-norcet-coaching' },
-    { name: 'RRB Coaching', path: '/best-rrb-nursing-coaching' },
-    { name: 'Guides', path: '/blog' },
-  ];
-
+  const navItems = [{ name: 'Guides', path: '/blog' }];
   const isActive = (path: string) => location.pathname === path;
 
   return (
@@ -51,10 +44,7 @@ export const Header: React.FC = () => {
           </div>
 
           <div className="flex items-center md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100"
-            >
+            <button onClick={() => setIsOpen(!isOpen)} className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100">
               <span className="sr-only">Open main menu</span>
               {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
             </button>
