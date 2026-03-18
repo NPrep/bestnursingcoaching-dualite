@@ -30,7 +30,7 @@ const comparisonRows = [
     priceBand: '₹₹₹',
     bestFor: 'Aspirants who prefer physical classroom learning',
   },
-  {
+c  {
     institute: 'Nursing Officer Academy',
     examCoverage: 'NORCET + nursing officer exam categories',
     delivery: 'Online batches + recorded access',
